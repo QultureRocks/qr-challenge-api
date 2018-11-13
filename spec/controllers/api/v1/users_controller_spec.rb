@@ -34,7 +34,7 @@ RSpec.describe Api::V1::UsersController, type: :controller do
       expect(response).to have_http_status(:ok)
     end
 
-    it 'returns the users' do
+    it 'returns the user' do
       expect(user_response[:id]).to eq(user.id)
     end
   end
@@ -47,7 +47,7 @@ RSpec.describe Api::V1::UsersController, type: :controller do
       expect(response).to have_http_status(:ok)
     end
 
-    it 'returns creates an user' do
+    it 'creates an user' do
       expect{ post :create, params: { user: user_params }, as: :json }.to change(User, :count).by(1)
     end
   end
@@ -65,7 +65,7 @@ RSpec.describe Api::V1::UsersController, type: :controller do
       expect(response).to have_http_status(:ok)
     end
 
-    it 'returns updates the requested user' do
+    it 'updates the requested user' do
       expect(user_response[:id]).to eq(user.id)
       expect(user_response[:name]).to eq(new_name)
     end
@@ -79,7 +79,7 @@ RSpec.describe Api::V1::UsersController, type: :controller do
       expect(response).to have_http_status(:ok)
     end
 
-    it 'returns creates an user' do
+    it 'feletes an user' do
       expect{ delete :destroy, params: { id: user.id }, as: :json }.to change(User, :count).by(-1)
     end
   end

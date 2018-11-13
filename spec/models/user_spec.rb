@@ -10,7 +10,7 @@ RSpec.describe User, type: :model do
   end
 
   describe 'relationships' do
-    it { is_expected.to have_many(:user).dependent(:destroy) }
+    it { is_expected.to have_many(:comments).dependent(:destroy) }
   end
 
   describe 'validations' do
