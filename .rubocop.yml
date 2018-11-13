@@ -3,7 +3,7 @@ AllCops:
     - 'bin/**/*'
 
 Metrics/LineLength:
-  Max: 120
+  Max: 160
 
 Style/Documentation:
   Enabled: false
@@ -11,3 +11,6 @@ Style/Documentation:
 Metrics/BlockLength:
   Exclude:
     - 'spec/**/*'
+
+Metrics/ClassLength:
+  Enabled: False

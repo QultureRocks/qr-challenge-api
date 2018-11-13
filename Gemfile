@@ -5,6 +5,7 @@ source 'https://rubygems.org'
 ruby '2.5.3'
 
 gem 'active_model_serializers'
+gem 'apipie-rails'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'faker'
 gem 'pg'

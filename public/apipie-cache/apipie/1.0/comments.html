@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>API documentation</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link type='text/css' rel='stylesheet' href='../../apipie/stylesheets/bundled/bootstrap.min.css'/>
+<link type='text/css' rel='stylesheet' href='../../apipie/stylesheets/bundled/prettify.css'/>
+<link type='text/css' rel='stylesheet' href='../../apipie/stylesheets/bundled/bootstrap-responsive.min.css'/>
+  <link type='text/css' rel='stylesheet' href='../../apipie/stylesheets/application.css'/>
+  <!-- IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div id='container'>
+        <ul class='breadcrumb'>
+  <li>
+    <a href='../../apipie/1.0.html'>Qulture.Rocks Challenge API 1.0</a>
+    <span class='divider'>/</span>
+  </li>
+  <li class='active'>
+    Comments
+    
+  </li>
+  
+</ul>
+
+<div class='page-header'>
+  <h1>
+    Comments
+    <br>
+    <small></small>
+  </h1>
+</div>
+
+
+
+
+
+
+<div class='accordion' id='accordion'>
+
+    <hr>
+    <div class='pull-right small'>
+      <a href='../../apipie/1.0/comments/index.html'> >>> </a>
+    </div>
+    <div>
+        <h2>
+          <a href='#description-index'
+           class='accordion-toggle'
+           data-toggle='collapse'
+           data-parent='#accordion'>
+            GET /api/v1/users/:user_id/comments
+          </a>
+          <br>
+          <small>List all comments</small>
+        </h2>
+    </div>
+
+
+    <div id='description-index' class='collapse accordion-body'>
+      
+<p>This endpoint returns all comments made in a user</p>
+
+
+
+
+
+  <h3>Examples</h3>
+    <pre class="prettyprint">{
+  &quot;comments&quot;: [
+    {
+      &quot;id&quot;: 1,
+      &quot;value&quot;: &quot;I hate Ryan!&quot;,
+      &quot;user_id&quot;: 1,
+      &quot;user&quot;: {
+        &quot;id&quot;: 1,
+        &quot;name&quot;: &quot;A Ryan Seacrest Type&quot;,
+        &quot;email&quot;: &quot;bettie@schummhammes.com&quot;,
+        &quot;photo_url&quot;: &quot;https://vignette.wikia.nocookie.net/bojackhorseman/images/2/23/A_Ryan_Seacrest_Type.png/revision/latest?cb=20180320012608&quot;,
+        &quot;admission_date&quot;: &quot;2014-08-22&quot;,
+        &quot;job_title&quot;: &quot;Talk show Host&quot;,
+        &quot;created_at&quot;: &quot;2018-11-13T18:40:35.248Z&quot;,
+        &quot;updated_at&quot;: &quot;2018-11-13T18:40:35.248Z&quot;
+      }
+    },
+    {
+      &quot;id&quot;: 2,
+      &quot;value&quot;: &quot;Beatrice is an awful horse&quot;,
+      &quot;user_id&quot;: 2,
+      &quot;user&quot;: {
+        &quot;id&quot;: 2,
+        &quot;name&quot;: &quot;Beatrice Horseman&quot;,
+        &quot;email&quot;: &quot;zachariah@terry.org&quot;,
+        &quot;photo_url&quot;: &quot;https://vignette.wikia.nocookie.net/bojackhorseman/images/5/51/Old_Beatrice_Horseman_Season_4.png/revision/latest?cb=20171127015940&quot;,
+        &quot;admission_date&quot;: &quot;2014-08-22&quot;,
+        &quot;job_title&quot;: &quot;Houswewife&quot;,
+        &quot;created_at&quot;: &quot;2018-11-13T18:40:35.198Z&quot;,
+        &quot;updated_at&quot;: &quot;2018-11-13T18:40:35.198Z&quot;
+      }
+    }
+  ]
+}
+</pre>
+
+  <h3>Params</h3>
+  <table class='table'>
+    <thead>
+      <tr>
+        <th>Param name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>user_id </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+<p>Id of the user</p>
+
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a Integer</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+
+    </tbody>
+  </table>
+
+
+
+    </div>
+    <hr>
+    <div class='pull-right small'>
+      <a href='../../apipie/1.0/comments/show.html'> >>> </a>
+    </div>
+    <div>
+        <h2>
+          <a href='#description-show'
+           class='accordion-toggle'
+           data-toggle='collapse'
+           data-parent='#accordion'>
+            GET /api/v1/comments/:id
+          </a>
+          <br>
+          <small>Shows a comment</small>
+        </h2>
+    </div>
+
+
+    <div id='description-show' class='collapse accordion-body'>
+      
+<p>This endpoint returns a comment information</p>
+
+
+
+
+
+  <h3>Examples</h3>
+    <pre class="prettyprint">{
+  &quot;comment&quot;: {
+    &quot;id&quot;: 1,
+    &quot;value&quot;: &quot;I hate Ryan!&quot;,
+    &quot;user_id&quot;: 1,
+    &quot;user&quot;: {
+      &quot;id&quot;: 1,
+      &quot;name&quot;: &quot;A Ryan Seacrest Type&quot;,
+      &quot;email&quot;: &quot;bettie@schummhammes.com&quot;,
+      &quot;photo_url&quot;: &quot;https://vignette.wikia.nocookie.net/bojackhorseman/images/2/23/A_Ryan_Seacrest_Type.png/revision/latest?cb=20180320012608&quot;,
+      &quot;admission_date&quot;: &quot;2014-08-22&quot;,
+      &quot;job_title&quot;: &quot;Talk show Host&quot;,
+      &quot;created_at&quot;: &quot;2018-11-13T18:40:35.248Z&quot;,
+      &quot;updated_at&quot;: &quot;2018-11-13T18:40:35.248Z&quot;
+    }
+  }
+}
+</pre>
+
+
+
+
+    </div>
+    <hr>
+    <div class='pull-right small'>
+      <a href='../../apipie/1.0/comments/destroy.html'> >>> </a>
+    </div>
+    <div>
+        <h2>
+          <a href='#description-destroy'
+           class='accordion-toggle'
+           data-toggle='collapse'
+           data-parent='#accordion'>
+            DELETE /api/v1/comments/:id
+          </a>
+          <br>
+          <small>Deletes a comment</small>
+        </h2>
+    </div>
+
+
+    <div id='description-destroy' class='collapse accordion-body'>
+      
+<p>This endpoint deletes a comment</p>
+
+
+
+
+
+
+  <h3>Params</h3>
+  <table class='table'>
+    <thead>
+      <tr>
+        <th>Param name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>id </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+<p>Id of the comment to be deleted</p>
+
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a Integer</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+
+    </tbody>
+  </table>
+
+
+
+    </div>
+    <hr>
+    <div class='pull-right small'>
+      <a href='../../apipie/1.0/comments/create.html'> >>> </a>
+    </div>
+    <div>
+        <h2>
+          <a href='#description-create'
+           class='accordion-toggle'
+           data-toggle='collapse'
+           data-parent='#accordion'>
+            POST /api/v1/comments
+          </a>
+          <br>
+          <small>Creates a comment</small>
+        </h2>
+    </div>
+
+
+    <div id='description-create' class='collapse accordion-body'>
+      
+<p>This endpoint creates a new comment based on the received data.</p>
+
+
+
+  <h3>Errors</h3>
+  
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th>Code</th>
+			<th>Description</th>
+			<th>Metadata</th>
+		</tr>
+	</thead>
+
+	<tbody>
+			<tr>
+				<td><span class="label label-important"> 422 </span></td>
+				<td>Unprocessable Entity - returned when comment data is incorrect</td>
+				<td><pre class="prettyprint lang-yaml">:status: &#39;422&#39;
+:error: Unprocessable Entity
+</pre>
+</td>
+			</tr>
+	</tbody>
+</table>
+
+
+
+  <h3>Examples</h3>
+    <pre class="prettyprint">Request
+
+{
+  &quot;comment&quot;: {
+    &quot;user_id&quot;: 3,
+    &quot;value&quot;: &quot;Bojack is awesome!&quot;
+  }
+}
+
+Response
+
+{
+  &quot;comment&quot;: {
+    &quot;id&quot;: 3,
+    &quot;value&quot;: &quot;Bojack is awesome!&quot;,
+    &quot;user_id&quot;: 3,
+    &quot;user&quot;: {
+      &quot;id&quot;: 3,
+      &quot;name&quot;: &quot;Bojack&quot;,
+      &quot;email&quot;: &quot;bojack@example.com.br&quot;,
+      &quot;job_title&quot;: &#39;Actor&#39;,
+      &quot;admission_date&quot;: &#39;2015-11-01&#39;,
+      &quot;photo_url&quot;: &#39;https://imgur.com/gallery/something_about_bojack&#39;,
+      &quot;created_at&quot;: &quot;2018-03-15T20:30:13.354-03:00&quot;,
+      &quot;updated_at&quot;: &quot;2018-03-15T20:30:13.354-03:00&quot;
+    },
+    &quot;created_at&quot;: &quot;2018-04-15T20:30:13.354-03:00&quot;,
+    &quot;updated_at&quot;: &quot;2018-04-15T20:30:13.354-03:00&quot;
+  }
+}
+</pre>
+
+  <h3>Params</h3>
+  <table class='table'>
+    <thead>
+      <tr>
+        <th>Param name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>comment </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+<p>Comment JSON object</p>
+
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a Hash</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+    <tr style='background-color:rgb(250,250,250);'>
+    <td>
+      <strong>comment[user_id] </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+<p>Id of the user to comment</p>
+
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a Integer</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(250,250,250);'>
+    <td>
+      <strong>comment[value] </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+<p>The actual comment</p>
+
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a String</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+
+
+    </tbody>
+  </table>
+
+
+
+    </div>
+    <hr>
+    <div class='pull-right small'>
+      <a href='../../apipie/1.0/comments/update.html'> >>> </a>
+    </div>
+    <div>
+        <h2>
+          <a href='#description-update'
+           class='accordion-toggle'
+           data-toggle='collapse'
+           data-parent='#accordion'>
+            PATCH /api/v1/comments/:id
+          </a>
+          <br>
+          <small>Updates a comment</small>
+        </h2>
+        <h2>
+          <a href='#description-update'
+           class='accordion-toggle'
+           data-toggle='collapse'
+           data-parent='#accordion'>
+            PUT /api/v1/comments/:id
+          </a>
+          <br>
+          <small>Updates a comment</small>
+        </h2>
+    </div>
+
+
+    <div id='description-update' class='collapse accordion-body'>
+      
+<p>This endpoint updates an user based on the received data.</p>
+
+
+
+  <h3>Errors</h3>
+  
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th>Code</th>
+			<th>Description</th>
+			<th>Metadata</th>
+		</tr>
+	</thead>
+
+	<tbody>
+			<tr>
+				<td><span class="label label-important"> 422 </span></td>
+				<td>Unprocessable Entity - returned when user data is incorrect</td>
+				<td><pre class="prettyprint lang-yaml">:status: &#39;422&#39;
+:error: Unprocessable Entity
+</pre>
+</td>
+			</tr>
+	</tbody>
+</table>
+
+
+
+  <h3>Examples</h3>
+    <pre class="prettyprint">User before update
+
+{
+  &quot;comment&quot;: {
+    &quot;user_id&quot;: 3,
+    &quot;value&quot;: &quot;Bojack is awesome!&quot;
+  }
+}
+
+Request
+
+{
+  &quot;comment&quot;: {
+    &quot;name&quot;: &quot;Bojack is incredible!&quot;
+  }
+}
+
+Response
+
+{
+  &quot;comment&quot;: {
+    &quot;user_id&quot;: 3,
+    &quot;name&quot;: &quot;Bojack is incredible!&quot;,
+    &quot;user&quot;: {
+      &quot;name&quot;: &quot;Bojack new name&quot;,
+      &quot;email&quot;: &quot;bojack@example.com.br&quot;,
+      &quot;job_title&quot;: &#39;Actor&#39;,
+      &quot;admission_date&quot;: &#39;2015-11-01&#39;,
+      &quot;photo_url&quot;: &#39;https://imgur.com/gallery/something_about_bojack&#39;,
+      &quot;created_at&quot;: &quot;2017-03-15T20:30:13.354-03:00&quot;,
+      &quot;updated_at&quot;: &quot;2018-03-15T20:30:13.354-03:00&quot;
+    }
+  }
+}
+</pre>
+
+  <h3>Params</h3>
+  <table class='table'>
+    <thead>
+      <tr>
+        <th>Param name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>comment </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+<p>Comment JSON object</p>
+
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a Hash</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+    <tr style='background-color:rgb(250,250,250);'>
+    <td>
+      <strong>comment[value] </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+<p>The new comment</p>
+
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a String</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+
+
+    </tbody>
+  </table>
+
+
+
+    </div>
+</div>
+
+
+        
+      </div>
+    </div>
+    <hr>
+    <footer></footer>
+  </div>
+  <script type='text/javascript' src='../../apipie/javascripts/bundled/jquery.js'></script>
+<script type='text/javascript' src='../../apipie/javascripts/bundled/bootstrap-collapse.js'></script>
+<script type='text/javascript' src='../../apipie/javascripts/bundled/prettify.js'></script>
+<script type='text/javascript' src='../../apipie/javascripts/apipie.js'></script>
+</body>
+</html>

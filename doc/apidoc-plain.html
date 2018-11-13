@@ -1,0 +1,840 @@
+  <h4><a href='#comments'>Comments</a></h4>
+  <ul>
+      <li><a href='#comments-index'>index</a></li>
+      <li><a href='#comments-show'>show</a></li>
+      <li><a href='#comments-destroy'>destroy</a></li>
+      <li><a href='#comments-create'>create</a></li>
+      <li><a href='#comments-update'>update</a></li>
+  </ul>
+  <h4><a href='#users'>Users</a></h4>
+  <ul>
+      <li><a href='#users-index'>index</a></li>
+      <li><a href='#users-show'>show</a></li>
+      <li><a href='#users-destroy'>destroy</a></li>
+      <li><a href='#users-create'>create</a></li>
+      <li><a href='#users-update'>update</a></li>
+  </ul>
+
+
+
+  <hr/>
+
+  <div>
+    <h2 id="comments">
+      <a href='#comments'>Comments</a><br>
+      <small></small>
+    </h2>
+  </div>
+
+
+  <div>
+
+      <hr/>
+
+      <h3 id="comments-index">
+      <a href='#comments'>Comments</a> / <a href='#comments-index'>index</a>
+      </h3>
+
+      <div>
+          <h4>
+              GET /api/v1/users/:user_id/comments
+            <br>
+            <small>List all comments</small>
+          </h4>
+      </div>
+
+      <div>
+        
+<p>This endpoint returns all comments made in a user</p>
+
+          <h4>Examples</h4>
+            <pre class="wiki">{
+  &quot;comments&quot;: [
+    {
+      &quot;id&quot;: 1,
+      &quot;value&quot;: &quot;I hate Ryan!&quot;,
+      &quot;user_id&quot;: 1,
+      &quot;user&quot;: {
+        &quot;id&quot;: 1,
+        &quot;name&quot;: &quot;A Ryan Seacrest Type&quot;,
+        &quot;email&quot;: &quot;bettie@schummhammes.com&quot;,
+        &quot;photo_url&quot;: &quot;https://vignette.wikia.nocookie.net/bojackhorseman/images/2/23/A_Ryan_Seacrest_Type.png/revision/latest?cb=20180320012608&quot;,
+        &quot;admission_date&quot;: &quot;2014-08-22&quot;,
+        &quot;job_title&quot;: &quot;Talk show Host&quot;,
+        &quot;created_at&quot;: &quot;2018-11-13T18:40:35.248Z&quot;,
+        &quot;updated_at&quot;: &quot;2018-11-13T18:40:35.248Z&quot;
+      }
+    },
+    {
+      &quot;id&quot;: 2,
+      &quot;value&quot;: &quot;Beatrice is an awful horse&quot;,
+      &quot;user_id&quot;: 2,
+      &quot;user&quot;: {
+        &quot;id&quot;: 2,
+        &quot;name&quot;: &quot;Beatrice Horseman&quot;,
+        &quot;email&quot;: &quot;zachariah@terry.org&quot;,
+        &quot;photo_url&quot;: &quot;https://vignette.wikia.nocookie.net/bojackhorseman/images/5/51/Old_Beatrice_Horseman_Season_4.png/revision/latest?cb=20171127015940&quot;,
+        &quot;admission_date&quot;: &quot;2014-08-22&quot;,
+        &quot;job_title&quot;: &quot;Houswewife&quot;,
+        &quot;created_at&quot;: &quot;2018-11-13T18:40:35.198Z&quot;,
+        &quot;updated_at&quot;: &quot;2018-11-13T18:40:35.198Z&quot;
+      }
+    }
+  ]
+}
+</pre>
+
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>user_id </strong>:
+      <small>
+        required
+        
+          [ 
+<p>Must be a Integer</p>
+ ]
+      </small>
+      
+<p>Id of the user</p>
+
+    </li>
+    
+</ul>
+
+      </div>
+      <hr/>
+
+      <h3 id="comments-show">
+      <a href='#comments'>Comments</a> / <a href='#comments-show'>show</a>
+      </h3>
+
+      <div>
+          <h4>
+              GET /api/v1/comments/:id
+            <br>
+            <small>Shows a comment</small>
+          </h4>
+      </div>
+
+      <div>
+        
+<p>This endpoint returns a comment information</p>
+
+          <h4>Examples</h4>
+            <pre class="wiki">{
+  &quot;comment&quot;: {
+    &quot;id&quot;: 1,
+    &quot;value&quot;: &quot;I hate Ryan!&quot;,
+    &quot;user_id&quot;: 1,
+    &quot;user&quot;: {
+      &quot;id&quot;: 1,
+      &quot;name&quot;: &quot;A Ryan Seacrest Type&quot;,
+      &quot;email&quot;: &quot;bettie@schummhammes.com&quot;,
+      &quot;photo_url&quot;: &quot;https://vignette.wikia.nocookie.net/bojackhorseman/images/2/23/A_Ryan_Seacrest_Type.png/revision/latest?cb=20180320012608&quot;,
+      &quot;admission_date&quot;: &quot;2014-08-22&quot;,
+      &quot;job_title&quot;: &quot;Talk show Host&quot;,
+      &quot;created_at&quot;: &quot;2018-11-13T18:40:35.248Z&quot;,
+      &quot;updated_at&quot;: &quot;2018-11-13T18:40:35.248Z&quot;
+    }
+  }
+}
+</pre>
+
+
+      </div>
+      <hr/>
+
+      <h3 id="comments-destroy">
+      <a href='#comments'>Comments</a> / <a href='#comments-destroy'>destroy</a>
+      </h3>
+
+      <div>
+          <h4>
+              DELETE /api/v1/comments/:id
+            <br>
+            <small>Deletes a comment</small>
+          </h4>
+      </div>
+
+      <div>
+        
+<p>This endpoint deletes a comment</p>
+
+
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>id </strong>:
+      <small>
+        required
+        
+          [ 
+<p>Must be a Integer</p>
+ ]
+      </small>
+      
+<p>Id of the comment to be deleted</p>
+
+    </li>
+    
+</ul>
+
+      </div>
+      <hr/>
+
+      <h3 id="comments-create">
+      <a href='#comments'>Comments</a> / <a href='#comments-create'>create</a>
+      </h3>
+
+      <div>
+          <h4>
+              POST /api/v1/comments
+            <br>
+            <small>Creates a comment</small>
+          </h4>
+      </div>
+
+      <div>
+        
+<p>This endpoint creates a new comment based on the received data.</p>
+
+          <h4>Examples</h4>
+            <pre class="wiki">Request
+
+{
+  &quot;comment&quot;: {
+    &quot;user_id&quot;: 3,
+    &quot;value&quot;: &quot;Bojack is awesome!&quot;
+  }
+}
+
+Response
+
+{
+  &quot;comment&quot;: {
+    &quot;id&quot;: 3,
+    &quot;value&quot;: &quot;Bojack is awesome!&quot;,
+    &quot;user_id&quot;: 3,
+    &quot;user&quot;: {
+      &quot;id&quot;: 3,
+      &quot;name&quot;: &quot;Bojack&quot;,
+      &quot;email&quot;: &quot;bojack@example.com.br&quot;,
+      &quot;job_title&quot;: &#39;Actor&#39;,
+      &quot;admission_date&quot;: &#39;2015-11-01&#39;,
+      &quot;photo_url&quot;: &#39;https://imgur.com/gallery/something_about_bojack&#39;,
+      &quot;created_at&quot;: &quot;2018-03-15T20:30:13.354-03:00&quot;,
+      &quot;updated_at&quot;: &quot;2018-03-15T20:30:13.354-03:00&quot;
+    },
+    &quot;created_at&quot;: &quot;2018-04-15T20:30:13.354-03:00&quot;,
+    &quot;updated_at&quot;: &quot;2018-04-15T20:30:13.354-03:00&quot;
+  }
+}
+</pre>
+
+          <h4>Errors</h4>
+            422
+            Unprocessable Entity - returned when comment data is incorrect
+            <pre class="prettyprint lang-yaml">:status: &#39;422&#39;
+:error: Unprocessable Entity
+</pre>
+
+            <br>
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>comment </strong>:
+      <small>
+        required
+        
+          [ 
+<p>Must be a Hash</p>
+ ]
+      </small>
+      
+<p>Comment JSON object</p>
+
+    </li>
+    <ul>
+    <li>
+      <strong>user_id </strong>:
+      <small>
+        required
+        
+          [ 
+<p>Must be a Integer</p>
+ ]
+      </small>
+      
+<p>Id of the user to comment</p>
+
+    </li>
+    
+    <li>
+      <strong>value </strong>:
+      <small>
+        required
+        
+          [ 
+<p>Must be a String</p>
+ ]
+      </small>
+      
+<p>The actual comment</p>
+
+    </li>
+    
+</ul>
+
+</ul>
+
+      </div>
+      <hr/>
+
+      <h3 id="comments-update">
+      <a href='#comments'>Comments</a> / <a href='#comments-update'>update</a>
+      </h3>
+
+      <div>
+          <h4>
+              PATCH /api/v1/comments/:id
+            <br>
+            <small>Updates a comment</small>
+          </h4>
+          <h4>
+              PUT /api/v1/comments/:id
+            <br>
+            <small>Updates a comment</small>
+          </h4>
+      </div>
+
+      <div>
+        
+<p>This endpoint updates an user based on the received data.</p>
+
+          <h4>Examples</h4>
+            <pre class="wiki">User before update
+
+{
+  &quot;comment&quot;: {
+    &quot;user_id&quot;: 3,
+    &quot;value&quot;: &quot;Bojack is awesome!&quot;
+  }
+}
+
+Request
+
+{
+  &quot;comment&quot;: {
+    &quot;name&quot;: &quot;Bojack is incredible!&quot;
+  }
+}
+
+Response
+
+{
+  &quot;comment&quot;: {
+    &quot;user_id&quot;: 3,
+    &quot;name&quot;: &quot;Bojack is incredible!&quot;,
+    &quot;user&quot;: {
+      &quot;name&quot;: &quot;Bojack new name&quot;,
+      &quot;email&quot;: &quot;bojack@example.com.br&quot;,
+      &quot;job_title&quot;: &#39;Actor&#39;,
+      &quot;admission_date&quot;: &#39;2015-11-01&#39;,
+      &quot;photo_url&quot;: &#39;https://imgur.com/gallery/something_about_bojack&#39;,
+      &quot;created_at&quot;: &quot;2017-03-15T20:30:13.354-03:00&quot;,
+      &quot;updated_at&quot;: &quot;2018-03-15T20:30:13.354-03:00&quot;
+    }
+  }
+}
+</pre>
+
+          <h4>Errors</h4>
+            422
+            Unprocessable Entity - returned when user data is incorrect
+            <pre class="prettyprint lang-yaml">:status: &#39;422&#39;
+:error: Unprocessable Entity
+</pre>
+
+            <br>
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>comment </strong>:
+      <small>
+        required
+        
+          [ 
+<p>Must be a Hash</p>
+ ]
+      </small>
+      
+<p>Comment JSON object</p>
+
+    </li>
+    <ul>
+    <li>
+      <strong>value </strong>:
+      <small>
+        required
+        
+          [ 
+<p>Must be a String</p>
+ ]
+      </small>
+      
+<p>The new comment</p>
+
+    </li>
+    
+</ul>
+
+</ul>
+
+      </div>
+  </div>
+
+  <hr/>
+
+  <div>
+    <h2 id="users">
+      <a href='#users'>Users</a><br>
+      <small></small>
+    </h2>
+  </div>
+
+
+  <div>
+
+      <hr/>
+
+      <h3 id="users-index">
+      <a href='#users'>Users</a> / <a href='#users-index'>index</a>
+      </h3>
+
+      <div>
+          <h4>
+              GET /api/v1/users
+            <br>
+            <small>List all users</small>
+          </h4>
+      </div>
+
+      <div>
+        
+<p>This endpoint returns all users in the database</p>
+
+          <h4>Examples</h4>
+            <pre class="wiki">{
+  &quot;users&quot;: [
+    {
+      &quot;id&quot;: 1,
+      &quot;name&quot;: &quot;A Ryan Seacrest Type&quot;,
+      &quot;email&quot;: &quot;bettie@schummhammes.com&quot;,
+      &quot;photo_url&quot;: &quot;https://vignette.wikia.nocookie.net/bojackhorseman/images/2/23/A_Ryan_Seacrest_Type.png/revision/latest?cb=20180320012608&quot;,
+      &quot;admission_date&quot;: &quot;2014-08-22&quot;,
+      &quot;job_title&quot;: &quot;Talk show Host&quot;,
+      &quot;created_at&quot;: &quot;2018-11-13T18:40:35.248Z&quot;,
+      &quot;updated_at&quot;: &quot;2018-11-13T18:40:35.248Z&quot;
+    },
+    {
+      &quot;id&quot;: 2,
+      &quot;name&quot;: &quot;Beatrice Horseman&quot;,
+      &quot;email&quot;: &quot;zachariah@terry.org&quot;,
+      &quot;photo_url&quot;: &quot;https://vignette.wikia.nocookie.net/bojackhorseman/images/5/51/Old_Beatrice_Horseman_Season_4.png/revision/latest?cb=20171127015940&quot;,
+      &quot;admission_date&quot;: &quot;2014-08-22&quot;,
+      &quot;job_title&quot;: &quot;Houswewife&quot;,
+      &quot;created_at&quot;: &quot;2018-11-13T18:40:35.198Z&quot;,
+      &quot;updated_at&quot;: &quot;2018-11-13T18:40:35.198Z&quot;
+    }
+  ]
+}
+</pre>
+
+
+      </div>
+      <hr/>
+
+      <h3 id="users-show">
+      <a href='#users'>Users</a> / <a href='#users-show'>show</a>
+      </h3>
+
+      <div>
+          <h4>
+              GET /api/v1/users/:id
+            <br>
+            <small>Shows an users</small>
+          </h4>
+      </div>
+
+      <div>
+        
+<p>This endpoint returns an user information</p>
+
+          <h4>Examples</h4>
+            <pre class="wiki">{
+  &quot;user&quot;: {
+    &quot;id&quot;: 1,
+    &quot;name&quot;: &quot;BoJack Horseman&quot;,
+    &quot;email&quot;: &quot;bunnystehr@bosco.net&quot;,
+    &quot;photo_url&quot;: &quot;https://vignette.wikia.nocookie.net/bojackhorseman/images/d/d2/BoJack_Horsemann.png/revision/latest?cb=20170924222700&quot;,
+    &quot;admission_date&quot;: &quot;2014-08-22&quot;,
+    &quot;job_title&quot;: &quot;Actor&quot;,
+    &quot;created_at&quot;: &quot;2018-11-13T18:40:35.108Z&quot;,
+    &quot;updated_at&quot;: &quot;2018-11-13T18:40:35.108Z&quot;
+  }
+}
+</pre>
+
+
+      </div>
+      <hr/>
+
+      <h3 id="users-destroy">
+      <a href='#users'>Users</a> / <a href='#users-destroy'>destroy</a>
+      </h3>
+
+      <div>
+          <h4>
+              DELETE /api/v1/users/:id
+            <br>
+            <small>Deletes an user</small>
+          </h4>
+      </div>
+
+      <div>
+        
+<p>This endpoint deletes an user</p>
+
+
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>id </strong>:
+      <small>
+        required
+        
+          [ 
+<p>Must be a Integer</p>
+ ]
+      </small>
+      
+<p>Id of the user to be deleted</p>
+
+    </li>
+    
+</ul>
+
+      </div>
+      <hr/>
+
+      <h3 id="users-create">
+      <a href='#users'>Users</a> / <a href='#users-create'>create</a>
+      </h3>
+
+      <div>
+          <h4>
+              POST /api/v1/users
+            <br>
+            <small>Creates an user</small>
+          </h4>
+      </div>
+
+      <div>
+        
+<p>This endpoint creeates a new user based on the received data.</p>
+
+          <h4>Examples</h4>
+            <pre class="wiki">Request
+
+{
+  &quot;user&quot;: {
+    &quot;name&quot;: &quot;Bojack&quot;,
+    &quot;email&quot;: &quot;bojack@example.com.br&quot;,
+    &quot;job_title&quot;: &#39;Actor&#39;,
+    &quot;admission_date&quot;: &#39;2015-11-01&#39;,
+    &quot;photo_url&quot;: &#39;https://imgur.com/gallery/something_about_bojack&#39;
+  }
+}
+
+Response
+
+{
+  &quot;user&quot;: {
+    &quot;id&quot;: 3,
+    &quot;name&quot;: &quot;Bojack&quot;,
+    &quot;email&quot;: &quot;bojack@example.com.br&quot;,
+    &quot;job_title&quot;: &#39;Actor&#39;,
+    &quot;admission_date&quot;: &#39;2015-11-01&#39;,
+    &quot;photo_url&quot;: &#39;https://imgur.com/gallery/something_about_bojack&#39;,
+    &quot;created_at&quot;: &quot;2018-03-15T20:30:13.354-03:00&quot;,
+    &quot;updated_at&quot;: &quot;2018-03-15T20:30:13.354-03:00&quot;
+  }
+}
+</pre>
+
+          <h4>Errors</h4>
+            422
+            Unprocessable Entity - returned when user data is incorrect
+            <pre class="prettyprint lang-yaml">:status: &#39;422&#39;
+:error: Unprocessable Entity
+</pre>
+
+            <br>
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>user </strong>:
+      <small>
+        required
+        
+          [ 
+<p>Must be a Hash</p>
+ ]
+      </small>
+      
+<p>User JSON object</p>
+
+    </li>
+    <ul>
+    <li>
+      <strong>name </strong>:
+      <small>
+        required
+        
+          [ 
+<p>Must be a String</p>
+ ]
+      </small>
+      
+<p>User name</p>
+
+    </li>
+    
+    <li>
+      <strong>email </strong>:
+      <small>
+        required
+        
+          [ 
+<p>Must be a String</p>
+ ]
+      </small>
+      
+<p>User email</p>
+
+    </li>
+    
+    <li>
+      <strong>job_title </strong>:
+      <small>
+        required
+        
+          [ 
+<p>Must be a String</p>
+ ]
+      </small>
+      
+<p>User job title / occupation</p>
+
+    </li>
+    
+    <li>
+      <strong>admission_date </strong>:
+      <small>
+        required
+        
+          [ 
+<p>Must be a Date</p>
+ ]
+      </small>
+      
+<p>Date when user entered the company</p>
+
+    </li>
+    
+    <li>
+      <strong>photo_url </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a String</p>
+ ]
+      </small>
+      
+<p>URL with an image</p>
+
+    </li>
+    
+</ul>
+
+</ul>
+
+      </div>
+      <hr/>
+
+      <h3 id="users-update">
+      <a href='#users'>Users</a> / <a href='#users-update'>update</a>
+      </h3>
+
+      <div>
+          <h4>
+              PATCH /api/v1/users/:id
+            <br>
+            <small>Updates an user</small>
+          </h4>
+          <h4>
+              PUT /api/v1/users/:id
+            <br>
+            <small>Updates an user</small>
+          </h4>
+      </div>
+
+      <div>
+        
+<p>This endpoint updates an user based on the received data.</p>
+
+          <h4>Examples</h4>
+            <pre class="wiki">User before update
+
+{
+  &quot;user&quot;: {
+    &quot;name&quot;: &quot;Bojack&quot;,
+    &quot;email&quot;: &quot;bojack@example.com.br&quot;,
+    &quot;job_title&quot;: &#39;Actor&#39;,
+    &quot;admission_date&quot;: &#39;2015-11-01&#39;,
+    &quot;photo_url&quot;: &#39;https://imgur.com/gallery/something_about_bojack&#39;
+  }
+}
+
+Request
+
+{
+  &quot;user&quot;: {
+    &quot;name&quot;: &quot;Bojack new name&quot;
+  }
+}
+
+Response
+
+{
+  &quot;user&quot;: {
+    &quot;name&quot;: &quot;Bojack new name&quot;,
+    &quot;email&quot;: &quot;bojack@example.com.br&quot;,
+    &quot;job_title&quot;: &#39;Actor&#39;,
+    &quot;admission_date&quot;: &#39;2015-11-01&#39;,
+    &quot;photo_url&quot;: &#39;https://imgur.com/gallery/something_about_bojack&#39;,
+    &quot;created_at&quot;: &quot;2017-03-15T20:30:13.354-03:00&quot;,
+    &quot;updated_at&quot;: &quot;2018-03-15T20:30:13.354-03:00&quot;
+  }
+}
+</pre>
+
+          <h4>Errors</h4>
+            422
+            Unprocessable Entity - returned when user data is incorrect
+            <pre class="prettyprint lang-yaml">:status: &#39;422&#39;
+:error: Unprocessable Entity
+</pre>
+
+            <br>
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>user </strong>:
+      <small>
+        required
+        
+          [ 
+<p>Must be a Hash</p>
+ ]
+      </small>
+      
+<p>User JSON object</p>
+
+    </li>
+    <ul>
+    <li>
+      <strong>name </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a String</p>
+ ]
+      </small>
+      
+<p>User name</p>
+
+    </li>
+    
+    <li>
+      <strong>email </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a String</p>
+ ]
+      </small>
+      
+<p>User email</p>
+
+    </li>
+    
+    <li>
+      <strong>job_title </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a String</p>
+ ]
+      </small>
+      
+<p>User job title / occupation</p>
+
+    </li>
+    
+    <li>
+      <strong>admission_date </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a Date</p>
+ ]
+      </small>
+      
+<p>Date when user entered the company</p>
+
+    </li>
+    
+    <li>
+      <strong>photo_url </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a String</p>
+ ]
+      </small>
+      
+<p>URL with an image</p>
+
+    </li>
+    
+</ul>
+
+</ul>
+
+      </div>
+  </div>

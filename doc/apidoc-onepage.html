@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>API documentation</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link type='text/css' rel='stylesheet' href='./apidoc/stylesheets/bundled/bootstrap.min.css'/>
+<link type='text/css' rel='stylesheet' href='./apidoc/stylesheets/bundled/prettify.css'/>
+<link type='text/css' rel='stylesheet' href='./apidoc/stylesheets/bundled/bootstrap-responsive.min.css'/>
+  <link type='text/css' rel='stylesheet' href='./apidoc/stylesheets/application.css'/>
+  <!-- IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div id='container'>
+          <h4><a href='#comments'>Comments</a></h4>
+  <ul>
+      <li><a href='#comments-index'>index</a></li>
+      <li><a href='#comments-show'>show</a></li>
+      <li><a href='#comments-destroy'>destroy</a></li>
+      <li><a href='#comments-create'>create</a></li>
+      <li><a href='#comments-update'>update</a></li>
+  </ul>
+  <h4><a href='#users'>Users</a></h4>
+  <ul>
+      <li><a href='#users-index'>index</a></li>
+      <li><a href='#users-show'>show</a></li>
+      <li><a href='#users-destroy'>destroy</a></li>
+      <li><a href='#users-create'>create</a></li>
+      <li><a href='#users-update'>update</a></li>
+  </ul>
+
+
+
+<div>
+<p>Another API description</p>
+</div>
+
+<hr>
+
+
+  <ul class='breadcrumb'  id='comments'>
+    <li><a href='#'>Qulture.Rocks Challenge API</a><span class='divider'>/</span></li>
+    <li class='active'>Comments</li>
+  </ul>
+
+  <div class='page-header'>
+    <h1>
+      <a href='#comments'>Comments</a><br>
+      <small></small>
+    </h1>
+  </div>
+
+
+  <div class='accordion' id='accordion'>
+
+      <hr>
+
+      <ul class='breadcrumb' id='comments-index'>
+        <li>
+          <a href='#'>Qulture.Rocks Challenge API</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#comments'>Comments</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>index</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#comments-index'>
+              GET /api/v1/users/:user_id/comments
+            </a><br>
+            <small>List all comments</small>
+          </h3>
+      </div>
+
+      <div>
+        
+<p>This endpoint returns all comments made in a user</p>
+
+          <h2>Examples</h2>
+            <pre>{
+  &quot;comments&quot;: [
+    {
+      &quot;id&quot;: 1,
+      &quot;value&quot;: &quot;I hate Ryan!&quot;,
+      &quot;user_id&quot;: 1,
+      &quot;user&quot;: {
+        &quot;id&quot;: 1,
+        &quot;name&quot;: &quot;A Ryan Seacrest Type&quot;,
+        &quot;email&quot;: &quot;bettie@schummhammes.com&quot;,
+        &quot;photo_url&quot;: &quot;https://vignette.wikia.nocookie.net/bojackhorseman/images/2/23/A_Ryan_Seacrest_Type.png/revision/latest?cb=20180320012608&quot;,
+        &quot;admission_date&quot;: &quot;2014-08-22&quot;,
+        &quot;job_title&quot;: &quot;Talk show Host&quot;,
+        &quot;created_at&quot;: &quot;2018-11-13T18:40:35.248Z&quot;,
+        &quot;updated_at&quot;: &quot;2018-11-13T18:40:35.248Z&quot;
+      }
+    },
+    {
+      &quot;id&quot;: 2,
+      &quot;value&quot;: &quot;Beatrice is an awful horse&quot;,
+      &quot;user_id&quot;: 2,
+      &quot;user&quot;: {
+        &quot;id&quot;: 2,
+        &quot;name&quot;: &quot;Beatrice Horseman&quot;,
+        &quot;email&quot;: &quot;zachariah@terry.org&quot;,
+        &quot;photo_url&quot;: &quot;https://vignette.wikia.nocookie.net/bojackhorseman/images/5/51/Old_Beatrice_Horseman_Season_4.png/revision/latest?cb=20171127015940&quot;,
+        &quot;admission_date&quot;: &quot;2014-08-22&quot;,
+        &quot;job_title&quot;: &quot;Houswewife&quot;,
+        &quot;created_at&quot;: &quot;2018-11-13T18:40:35.198Z&quot;,
+        &quot;updated_at&quot;: &quot;2018-11-13T18:40:35.198Z&quot;
+      }
+    }
+  ]
+}
+</pre>
+
+
+          <h2>Params</h2>
+          <table class='table'>
+            <thead>
+              <tr>
+                <th>Param name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>user_id </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+<p>Id of the user</p>
+
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a Integer</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+
+            </tbody>
+          </table>
+      </div>
+      <hr>
+
+      <ul class='breadcrumb' id='comments-show'>
+        <li>
+          <a href='#'>Qulture.Rocks Challenge API</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#comments'>Comments</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>show</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#comments-show'>
+              GET /api/v1/comments/:id
+            </a><br>
+            <small>Shows a comment</small>
+          </h3>
+      </div>
+
+      <div>
+        
+<p>This endpoint returns a comment information</p>
+
+          <h2>Examples</h2>
+            <pre>{
+  &quot;comment&quot;: {
+    &quot;id&quot;: 1,
+    &quot;value&quot;: &quot;I hate Ryan!&quot;,
+    &quot;user_id&quot;: 1,
+    &quot;user&quot;: {
+      &quot;id&quot;: 1,
+      &quot;name&quot;: &quot;A Ryan Seacrest Type&quot;,
+      &quot;email&quot;: &quot;bettie@schummhammes.com&quot;,
+      &quot;photo_url&quot;: &quot;https://vignette.wikia.nocookie.net/bojackhorseman/images/2/23/A_Ryan_Seacrest_Type.png/revision/latest?cb=20180320012608&quot;,
+      &quot;admission_date&quot;: &quot;2014-08-22&quot;,
+      &quot;job_title&quot;: &quot;Talk show Host&quot;,
+      &quot;created_at&quot;: &quot;2018-11-13T18:40:35.248Z&quot;,
+      &quot;updated_at&quot;: &quot;2018-11-13T18:40:35.248Z&quot;
+    }
+  }
+}
+</pre>
+
+
+      </div>
+      <hr>
+
+      <ul class='breadcrumb' id='comments-destroy'>
+        <li>
+          <a href='#'>Qulture.Rocks Challenge API</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#comments'>Comments</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>destroy</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#comments-destroy'>
+              DELETE /api/v1/comments/:id
+            </a><br>
+            <small>Deletes a comment</small>
+          </h3>
+      </div>
+
+      <div>
+        
+<p>This endpoint deletes a comment</p>
+
+
+
+          <h2>Params</h2>
+          <table class='table'>
+            <thead>
+              <tr>
+                <th>Param name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>id </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+<p>Id of the comment to be deleted</p>
+
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a Integer</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+
+            </tbody>
+          </table>
+      </div>
+      <hr>
+
+      <ul class='breadcrumb' id='comments-create'>
+        <li>
+          <a href='#'>Qulture.Rocks Challenge API</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#comments'>Comments</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>create</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#comments-create'>
+              POST /api/v1/comments
+            </a><br>
+            <small>Creates a comment</small>
+          </h3>
+      </div>
+
+      <div>
+        
+<p>This endpoint creates a new comment based on the received data.</p>
+
+          <h2>Examples</h2>
+            <pre>Request
+
+{
+  &quot;comment&quot;: {
+    &quot;user_id&quot;: 3,
+    &quot;value&quot;: &quot;Bojack is awesome!&quot;
+  }
+}
+
+Response
+
+{
+  &quot;comment&quot;: {
+    &quot;id&quot;: 3,
+    &quot;value&quot;: &quot;Bojack is awesome!&quot;,
+    &quot;user_id&quot;: 3,
+    &quot;user&quot;: {
+      &quot;id&quot;: 3,
+      &quot;name&quot;: &quot;Bojack&quot;,
+      &quot;email&quot;: &quot;bojack@example.com.br&quot;,
+      &quot;job_title&quot;: &#39;Actor&#39;,
+      &quot;admission_date&quot;: &#39;2015-11-01&#39;,
+      &quot;photo_url&quot;: &#39;https://imgur.com/gallery/something_about_bojack&#39;,
+      &quot;created_at&quot;: &quot;2018-03-15T20:30:13.354-03:00&quot;,
+      &quot;updated_at&quot;: &quot;2018-03-15T20:30:13.354-03:00&quot;
+    },
+    &quot;created_at&quot;: &quot;2018-04-15T20:30:13.354-03:00&quot;,
+    &quot;updated_at&quot;: &quot;2018-04-15T20:30:13.354-03:00&quot;
+  }
+}
+</pre>
+
+          <h2>Errors</h2>
+          
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th>Code</th>
+			<th>Description</th>
+			<th>Metadata</th>
+		</tr>
+	</thead>
+
+	<tbody>
+			<tr>
+				<td><span class="label label-important"> 422 </span></td>
+				<td>Unprocessable Entity - returned when comment data is incorrect</td>
+				<td><pre class="prettyprint lang-yaml">:status: &#39;422&#39;
+:error: Unprocessable Entity
+</pre>
+</td>
+			</tr>
+	</tbody>
+</table>
+
+
+          <h2>Params</h2>
+          <table class='table'>
+            <thead>
+              <tr>
+                <th>Param name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>comment </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+<p>Comment JSON object</p>
+
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a Hash</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+    <tr style='background-color:rgb(250,250,250);'>
+    <td>
+      <strong>comment[user_id] </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+<p>Id of the user to comment</p>
+
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a Integer</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(250,250,250);'>
+    <td>
+      <strong>comment[value] </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+<p>The actual comment</p>
+
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a String</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+
+
+            </tbody>
+          </table>
+      </div>
+      <hr>
+
+      <ul class='breadcrumb' id='comments-update'>
+        <li>
+          <a href='#'>Qulture.Rocks Challenge API</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#comments'>Comments</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>update</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#comments-update'>
+              PATCH /api/v1/comments/:id
+            </a><br>
+            <small>Updates a comment</small>
+          </h3>
+          <h3>
+            <a href='#comments-update'>
+              PUT /api/v1/comments/:id
+            </a><br>
+            <small>Updates a comment</small>
+          </h3>
+      </div>
+
+      <div>
+        
+<p>This endpoint updates an user based on the received data.</p>
+
+          <h2>Examples</h2>
+            <pre>User before update
+
+{
+  &quot;comment&quot;: {
+    &quot;user_id&quot;: 3,
+    &quot;value&quot;: &quot;Bojack is awesome!&quot;
+  }
+}
+
+Request
+
+{
+  &quot;comment&quot;: {
+    &quot;name&quot;: &quot;Bojack is incredible!&quot;
+  }
+}
+
+Response
+
+{
+  &quot;comment&quot;: {
+    &quot;user_id&quot;: 3,
+    &quot;name&quot;: &quot;Bojack is incredible!&quot;,
+    &quot;user&quot;: {
+      &quot;name&quot;: &quot;Bojack new name&quot;,
+      &quot;email&quot;: &quot;bojack@example.com.br&quot;,
+      &quot;job_title&quot;: &#39;Actor&#39;,
+      &quot;admission_date&quot;: &#39;2015-11-01&#39;,
+      &quot;photo_url&quot;: &#39;https://imgur.com/gallery/something_about_bojack&#39;,
+      &quot;created_at&quot;: &quot;2017-03-15T20:30:13.354-03:00&quot;,
+      &quot;updated_at&quot;: &quot;2018-03-15T20:30:13.354-03:00&quot;
+    }
+  }
+}
+</pre>
+
+          <h2>Errors</h2>
+          
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th>Code</th>
+			<th>Description</th>
+			<th>Metadata</th>
+		</tr>
+	</thead>
+
+	<tbody>
+			<tr>
+				<td><span class="label label-important"> 422 </span></td>
+				<td>Unprocessable Entity - returned when user data is incorrect</td>
+				<td><pre class="prettyprint lang-yaml">:status: &#39;422&#39;
+:error: Unprocessable Entity
+</pre>
+</td>
+			</tr>
+	</tbody>
+</table>
+
+
+          <h2>Params</h2>
+          <table class='table'>
+            <thead>
+              <tr>
+                <th>Param name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>comment </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+<p>Comment JSON object</p>
+
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a Hash</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+    <tr style='background-color:rgb(250,250,250);'>
+    <td>
+      <strong>comment[value] </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+<p>The new comment</p>
+
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a String</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+
+
+            </tbody>
+          </table>
+      </div>
+  </div>
+
+  <ul class='breadcrumb'  id='users'>
+    <li><a href='#'>Qulture.Rocks Challenge API</a><span class='divider'>/</span></li>
+    <li class='active'>Users</li>
+  </ul>
+
+  <div class='page-header'>
+    <h1>
+      <a href='#users'>Users</a><br>
+      <small></small>
+    </h1>
+  </div>
+
+
+  <div class='accordion' id='accordion'>
+
+      <hr>
+
+      <ul class='breadcrumb' id='users-index'>
+        <li>
+          <a href='#'>Qulture.Rocks Challenge API</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#users'>Users</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>index</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#users-index'>
+              GET /api/v1/users
+            </a><br>
+            <small>List all users</small>
+          </h3>
+      </div>
+
+      <div>
+        
+<p>This endpoint returns all users in the database</p>
+
+          <h2>Examples</h2>
+            <pre>{
+  &quot;users&quot;: [
+    {
+      &quot;id&quot;: 1,
+      &quot;name&quot;: &quot;A Ryan Seacrest Type&quot;,
+      &quot;email&quot;: &quot;bettie@schummhammes.com&quot;,
+      &quot;photo_url&quot;: &quot;https://vignette.wikia.nocookie.net/bojackhorseman/images/2/23/A_Ryan_Seacrest_Type.png/revision/latest?cb=20180320012608&quot;,
+      &quot;admission_date&quot;: &quot;2014-08-22&quot;,
+      &quot;job_title&quot;: &quot;Talk show Host&quot;,
+      &quot;created_at&quot;: &quot;2018-11-13T18:40:35.248Z&quot;,
+      &quot;updated_at&quot;: &quot;2018-11-13T18:40:35.248Z&quot;
+    },
+    {
+      &quot;id&quot;: 2,
+      &quot;name&quot;: &quot;Beatrice Horseman&quot;,
+      &quot;email&quot;: &quot;zachariah@terry.org&quot;,
+      &quot;photo_url&quot;: &quot;https://vignette.wikia.nocookie.net/bojackhorseman/images/5/51/Old_Beatrice_Horseman_Season_4.png/revision/latest?cb=20171127015940&quot;,
+      &quot;admission_date&quot;: &quot;2014-08-22&quot;,
+      &quot;job_title&quot;: &quot;Houswewife&quot;,
+      &quot;created_at&quot;: &quot;2018-11-13T18:40:35.198Z&quot;,
+      &quot;updated_at&quot;: &quot;2018-11-13T18:40:35.198Z&quot;
+    }
+  ]
+}
+</pre>
+
+
+      </div>
+      <hr>
+
+      <ul class='breadcrumb' id='users-show'>
+        <li>
+          <a href='#'>Qulture.Rocks Challenge API</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#users'>Users</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>show</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#users-show'>
+              GET /api/v1/users/:id
+            </a><br>
+            <small>Shows an users</small>
+          </h3>
+      </div>
+
+      <div>
+        
+<p>This endpoint returns an user information</p>
+
+          <h2>Examples</h2>
+            <pre>{
+  &quot;user&quot;: {
+    &quot;id&quot;: 1,
+    &quot;name&quot;: &quot;BoJack Horseman&quot;,
+    &quot;email&quot;: &quot;bunnystehr@bosco.net&quot;,
+    &quot;photo_url&quot;: &quot;https://vignette.wikia.nocookie.net/bojackhorseman/images/d/d2/BoJack_Horsemann.png/revision/latest?cb=20170924222700&quot;,
+    &quot;admission_date&quot;: &quot;2014-08-22&quot;,
+    &quot;job_title&quot;: &quot;Actor&quot;,
+    &quot;created_at&quot;: &quot;2018-11-13T18:40:35.108Z&quot;,
+    &quot;updated_at&quot;: &quot;2018-11-13T18:40:35.108Z&quot;
+  }
+}
+</pre>
+
+
+      </div>
+      <hr>
+
+      <ul class='breadcrumb' id='users-destroy'>
+        <li>
+          <a href='#'>Qulture.Rocks Challenge API</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#users'>Users</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>destroy</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#users-destroy'>
+              DELETE /api/v1/users/:id
+            </a><br>
+            <small>Deletes an user</small>
+          </h3>
+      </div>
+
+      <div>
+        
+<p>This endpoint deletes an user</p>
+
+
+
+          <h2>Params</h2>
+          <table class='table'>
+            <thead>
+              <tr>
+                <th>Param name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>id </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+<p>Id of the user to be deleted</p>
+
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a Integer</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+
+            </tbody>
+          </table>
+      </div>
+      <hr>
+
+      <ul class='breadcrumb' id='users-create'>
+        <li>
+          <a href='#'>Qulture.Rocks Challenge API</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#users'>Users</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>create</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#users-create'>
+              POST /api/v1/users
+            </a><br>
+            <small>Creates an user</small>
+          </h3>
+      </div>
+
+      <div>
+        
+<p>This endpoint creeates a new user based on the received data.</p>
+
+          <h2>Examples</h2>
+            <pre>Request
+
+{
+  &quot;user&quot;: {
+    &quot;name&quot;: &quot;Bojack&quot;,
+    &quot;email&quot;: &quot;bojack@example.com.br&quot;,
+    &quot;job_title&quot;: &#39;Actor&#39;,
+    &quot;admission_date&quot;: &#39;2015-11-01&#39;,
+    &quot;photo_url&quot;: &#39;https://imgur.com/gallery/something_about_bojack&#39;
+  }
+}
+
+Response
+
+{
+  &quot;user&quot;: {
+    &quot;id&quot;: 3,
+    &quot;name&quot;: &quot;Bojack&quot;,
+    &quot;email&quot;: &quot;bojack@example.com.br&quot;,
+    &quot;job_title&quot;: &#39;Actor&#39;,
+    &quot;admission_date&quot;: &#39;2015-11-01&#39;,
+    &quot;photo_url&quot;: &#39;https://imgur.com/gallery/something_about_bojack&#39;,
+    &quot;created_at&quot;: &quot;2018-03-15T20:30:13.354-03:00&quot;,
+    &quot;updated_at&quot;: &quot;2018-03-15T20:30:13.354-03:00&quot;
+  }
+}
+</pre>
+
+          <h2>Errors</h2>
+          
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th>Code</th>
+			<th>Description</th>
+			<th>Metadata</th>
+		</tr>
+	</thead>
+
+	<tbody>
+			<tr>
+				<td><span class="label label-important"> 422 </span></td>
+				<td>Unprocessable Entity - returned when user data is incorrect</td>
+				<td><pre class="prettyprint lang-yaml">:status: &#39;422&#39;
+:error: Unprocessable Entity
+</pre>
+</td>
+			</tr>
+	</tbody>
+</table>
+
+
+          <h2>Params</h2>
+          <table class='table'>
+            <thead>
+              <tr>
+                <th>Param name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>user </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+<p>User JSON object</p>
+
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a Hash</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+    <tr style='background-color:rgb(250,250,250);'>
+    <td>
+      <strong>user[name] </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+<p>User name</p>
+
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a String</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(250,250,250);'>
+    <td>
+      <strong>user[email] </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+<p>User email</p>
+
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a String</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(250,250,250);'>
+    <td>
+      <strong>user[job_title] </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+<p>User job title / occupation</p>
+
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a String</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(250,250,250);'>
+    <td>
+      <strong>user[admission_date] </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+<p>Date when user entered the company</p>
+
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a Date</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(250,250,250);'>
+    <td>
+      <strong>user[photo_url] </strong><br>
+      <small>
+        optional
+        
+      </small>
+    </td>
+    <td>
+      
+<p>URL with an image</p>
+
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a String</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+
+
+            </tbody>
+          </table>
+      </div>
+      <hr>
+
+      <ul class='breadcrumb' id='users-update'>
+        <li>
+          <a href='#'>Qulture.Rocks Challenge API</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#users'>Users</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>update</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#users-update'>
+              PATCH /api/v1/users/:id
+            </a><br>
+            <small>Updates an user</small>
+          </h3>
+          <h3>
+            <a href='#users-update'>
+              PUT /api/v1/users/:id
+            </a><br>
+            <small>Updates an user</small>
+          </h3>
+      </div>
+
+      <div>
+        
+<p>This endpoint updates an user based on the received data.</p>
+
+          <h2>Examples</h2>
+            <pre>User before update
+
+{
+  &quot;user&quot;: {
+    &quot;name&quot;: &quot;Bojack&quot;,
+    &quot;email&quot;: &quot;bojack@example.com.br&quot;,
+    &quot;job_title&quot;: &#39;Actor&#39;,
+    &quot;admission_date&quot;: &#39;2015-11-01&#39;,
+    &quot;photo_url&quot;: &#39;https://imgur.com/gallery/something_about_bojack&#39;
+  }
+}
+
+Request
+
+{
+  &quot;user&quot;: {
+    &quot;name&quot;: &quot;Bojack new name&quot;
+  }
+}
+
+Response
+
+{
+  &quot;user&quot;: {
+    &quot;name&quot;: &quot;Bojack new name&quot;,
+    &quot;email&quot;: &quot;bojack@example.com.br&quot;,
+    &quot;job_title&quot;: &#39;Actor&#39;,
+    &quot;admission_date&quot;: &#39;2015-11-01&#39;,
+    &quot;photo_url&quot;: &#39;https://imgur.com/gallery/something_about_bojack&#39;,
+    &quot;created_at&quot;: &quot;2017-03-15T20:30:13.354-03:00&quot;,
+    &quot;updated_at&quot;: &quot;2018-03-15T20:30:13.354-03:00&quot;
+  }
+}
+</pre>
+
+          <h2>Errors</h2>
+          
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th>Code</th>
+			<th>Description</th>
+			<th>Metadata</th>
+		</tr>
+	</thead>
+
+	<tbody>
+			<tr>
+				<td><span class="label label-important"> 422 </span></td>
+				<td>Unprocessable Entity - returned when user data is incorrect</td>
+				<td><pre class="prettyprint lang-yaml">:status: &#39;422&#39;
+:error: Unprocessable Entity
+</pre>
+</td>
+			</tr>
+	</tbody>
+</table>
+
+
+          <h2>Params</h2>
+          <table class='table'>
+            <thead>
+              <tr>
+                <th>Param name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>user </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+<p>User JSON object</p>
+
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a Hash</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+    <tr style='background-color:rgb(250,250,250);'>
+    <td>
+      <strong>user[name] </strong><br>
+      <small>
+        optional
+        
+      </small>
+    </td>
+    <td>
+      
+<p>User name</p>
+
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a String</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(250,250,250);'>
+    <td>
+      <strong>user[email] </strong><br>
+      <small>
+        optional
+        
+      </small>
+    </td>
+    <td>
+      
+<p>User email</p>
+
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a String</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(250,250,250);'>
+    <td>
+      <strong>user[job_title] </strong><br>
+      <small>
+        optional
+        
+      </small>
+    </td>
+    <td>
+      
+<p>User job title / occupation</p>
+
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a String</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(250,250,250);'>
+    <td>
+      <strong>user[admission_date] </strong><br>
+      <small>
+        optional
+        
+      </small>
+    </td>
+    <td>
+      
+<p>Date when user entered the company</p>
+
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a Date</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(250,250,250);'>
+    <td>
+      <strong>user[photo_url] </strong><br>
+      <small>
+        optional
+        
+      </small>
+    </td>
+    <td>
+      
+<p>URL with an image</p>
+
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a String</p>
+</li>
+        </ul>
+
+    </td>
+
+  </tr>
+
+  
+
+
+            </tbody>
+          </table>
+      </div>
+  </div>
+
+
+        
+      </div>
+    </div>
+    <hr>
+    <footer></footer>
+  </div>
+  <script type='text/javascript' src='./apidoc/javascripts/bundled/jquery.js'></script>
+<script type='text/javascript' src='./apidoc/javascripts/bundled/bootstrap-collapse.js'></script>
+<script type='text/javascript' src='./apidoc/javascripts/bundled/prettify.js'></script>
+<script type='text/javascript' src='./apidoc/javascripts/apipie.js'></script>
+</body>
+</html>
