@@ -20,8 +20,8 @@ ActiveRecord::Schema.define(version: 2018_11_13_144945) do
     t.string "email", null: false
     t.string "photo_url"
     t.string "cpf"
-    t.string "job_title"
-    t.date "admission_date"
+    t.string "job_title", null: false
+    t.date "admission_date", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -5,8 +5,8 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :email, null: false
       t.string :photo_url
       t.string :cpf
-      t.string :job_title
-      t.date :admission_date
+      t.string :job_title, null: false
+      t.date :admission_date, null: false
 
       t.timestamps
     end

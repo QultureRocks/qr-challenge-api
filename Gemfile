@@ -12,8 +12,10 @@ gem 'rails', '~> 5.2.1'
 group :development, :test do
   gem 'factory_bot_rails'
   gem 'pry-rails'
+  gem 'rspec'
   gem 'rspec-rails'
   gem 'rubocop'
+  gem 'shoulda-matchers'
 end
 
 group :development do
