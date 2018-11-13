@@ -10,6 +10,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'faker'
 gem 'pg'
 gem 'puma', '~> 3.11'
+gem 'rack-cors', require: 'rack/cors'
 gem 'rails', '~> 5.2.1'
 
 group :development, :test do
