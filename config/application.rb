@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+# frozen_string_literal true
+
 require_relative 'boot'
 
 require 'rails'
@@ -37,7 +39,7 @@ module QrChallenge
     config.middleware.insert_before 0, Rack::Cors do
       allow do
         origins '*'
-        resource '*', headers: :any, methods: %i[get post options put delete]
+        resource '*', headers: :any, methods: %i[get post delete put patch options head]
       end
     end
   end

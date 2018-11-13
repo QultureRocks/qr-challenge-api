@@ -4,7 +4,7 @@ module Api
   module V1
     class CommentsController < ApplicationController
       api! 'List all comments'
-      param :user_id, Integer, desc: 'Id of the user', required: true
+      param :user_id, String, desc: 'Id of the user', required: true
       description <<-HEREDOC
         This endpoint returns all comments made in a user
       HEREDOC
@@ -79,7 +79,7 @@ module Api
       description <<-HEREDOC
         This endpoint deletes a comment
       HEREDOC
-      param :id, Integer, desc: 'Id of the comment to be deleted', required: true
+      param :id, String, desc: 'Id of the comment to be deleted', required: true
       def destroy
         if comment.destroy
           head :ok

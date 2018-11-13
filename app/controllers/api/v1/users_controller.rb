@@ -63,7 +63,7 @@ module Api
       description <<-HEREDOC
         This endpoint deletes an user
       HEREDOC
-      param :id, Integer, desc: 'Id of the user to be deleted', required: true
+      param :id, String, desc: 'Id of the user to be deleted', required: true
       def destroy
         if user.destroy
           head :ok
@@ -77,7 +77,7 @@ module Api
         param :name, String, desc: 'User name', required: true
         param :email, String, desc: 'User email', required: true
         param :job_title, String, desc: 'User job title / occupation', required: true
-        param :admission_date, Date, desc: 'Date when user entered the company', required: true
+        param :admission_date, String, desc: 'Date when user entered the company', required: true
         param :photo_url, String, desc: 'URL with an image'
       end
       error 422, 'Unprocessable Entity - returned when user data is incorrect', meta: { "status": '422', "error": 'Unprocessable Entity' }
@@ -127,7 +127,7 @@ module Api
         param :name, String, desc: 'User name'
         param :email, String, desc: 'User email'
         param :job_title, String, desc: 'User job title / occupation'
-        param :admission_date, Date, desc: 'Date when user entered the company'
+        param :admission_date, String, desc: 'Date when user entered the company'
         param :photo_url, String, desc: 'URL with an image'
       end
       error 422, 'Unprocessable Entity - returned when user data is incorrect', meta: { "status": '422', "error": 'Unprocessable Entity' }
