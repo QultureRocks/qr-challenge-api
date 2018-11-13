@@ -7,4 +7,6 @@ class User < ApplicationRecord
   validates :email, presence: true
   validates :job_title, presence: true
   validates :admission_date, presence: true
+
+  scope :order_by_name, ->{ order(name: :asc) }
 end
