@@ -11,6 +11,7 @@ gem 'rails', '~> 5.2.1'
 
 group :development, :test do
   gem 'pry-rails'
+  gem 'rspec-rails'
   gem 'rubocop'
 end
 
