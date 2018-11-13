@@ -10,13 +10,14 @@ gem 'puma', '~> 3.11'
 gem 'rails', '~> 5.2.1'
 
 group :development, :test do
+  gem 'factory_bot_rails'
   gem 'pry-rails'
   gem 'rspec-rails'
   gem 'rubocop'
 end
 
 group :development do
-  gem 'factory_bot_rails'
+  gem 'annotate'
   gem 'faker'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
