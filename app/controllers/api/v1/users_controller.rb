@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 
 module Api
   module V1
@@ -39,7 +40,7 @@ module Api
       private
 
       def users
-        @user ||= User.order_by_name
+        @users ||= User.order_by_name
       end
 
       def user

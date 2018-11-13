@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 
 module Api
   module V1
@@ -43,7 +44,7 @@ module Api
       end
 
       def comments
-        @comment ||= user&.comments || Comment.none
+        @comments ||= user&.comments || Comment.none
       end
 
       def comment

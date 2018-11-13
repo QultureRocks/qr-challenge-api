@@ -21,7 +21,7 @@ RSpec.describe Api::V1::CommentsController, type: :controller do
     end
 
     it 'returns all comments from user' do
-      expect(comments_response.map{|x| x[:id] }).to match_array(comments.pluck(:id))
+      expect(comments_response.map { |x| x[:id] }).to match_array(comments.pluck(:id))
     end
   end
 
@@ -29,7 +29,7 @@ RSpec.describe Api::V1::CommentsController, type: :controller do
     let(:comment) { create(:comment) }
 
     before do
-      get :show, params: { id: comment.id },  as: :json
+      get :show, params: { id: comment.id }, as: :json
     end
 
     it 'responds with :ok status code' do
@@ -51,7 +51,7 @@ RSpec.describe Api::V1::CommentsController, type: :controller do
     end
 
     it 'creates a comment' do
-      expect{ post :create, params: { comment: comment_params }, as: :json }.to change(Comment, :count).by(1)
+      expect { post :create, params: { comment: comment_params }, as: :json }.to change(Comment, :count).by(1)
     end
   end
 
@@ -83,7 +83,7 @@ RSpec.describe Api::V1::CommentsController, type: :controller do
     end
 
     it 'deletes a comment' do
-      expect{ delete :destroy, params: { id: comment.id }, as: :json }.to change(Comment, :count).by(-1)
+      expect { delete :destroy, params: { id: comment.id }, as: :json }.to change(Comment, :count).by(-1)
     end
   end
 end

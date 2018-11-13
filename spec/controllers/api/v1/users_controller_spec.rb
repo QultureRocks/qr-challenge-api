@@ -19,7 +19,7 @@ RSpec.describe Api::V1::UsersController, type: :controller do
     end
 
     it 'returns all users' do
-      expect(users_response.map{|x| x[:id] }).to match_array(users.pluck(:id))
+      expect(users_response.map { |x| x[:id] }).to match_array(users.pluck(:id))
     end
   end
 
@@ -27,7 +27,7 @@ RSpec.describe Api::V1::UsersController, type: :controller do
     let(:user) { create(:user) }
 
     before do
-      get :show, params: { id: user.id },  as: :json
+      get :show, params: { id: user.id }, as: :json
     end
 
     it 'responds with :ok status code' do
@@ -48,7 +48,7 @@ RSpec.describe Api::V1::UsersController, type: :controller do
     end
 
     it 'creates an user' do
-      expect{ post :create, params: { user: user_params }, as: :json }.to change(User, :count).by(1)
+      expect { post :create, params: { user: user_params }, as: :json }.to change(User, :count).by(1)
     end
   end
 
@@ -80,7 +80,7 @@ RSpec.describe Api::V1::UsersController, type: :controller do
     end
 
     it 'feletes an user' do
-      expect{ delete :destroy, params: { id: user.id }, as: :json }.to change(User, :count).by(-1)
+      expect { delete :destroy, params: { id: user.id }, as: :json }.to change(User, :count).by(-1)
     end
   end
 end
