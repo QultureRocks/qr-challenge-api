@@ -6,6 +6,7 @@ ruby '2.5.3'
 
 gem 'active_model_serializers'
 gem 'bootsnap', '>= 1.1.0', require: false
+gem 'faker'
 gem 'pg'
 gem 'puma', '~> 3.11'
 gem 'rails', '~> 5.2.1'
@@ -21,7 +22,6 @@ end
 
 group :development do
   gem 'annotate'
-  gem 'faker'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
