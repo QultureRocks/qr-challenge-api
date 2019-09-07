@@ -74,6 +74,9 @@ GEM
     ffi (1.9.25)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+    graphql (1.9.11)
+    graphqr (0.0.6)
+      graphql (>= 1.9.0, < 2)
     i18n (1.1.1)
       concurrent-ruby (~> 1.0)
     jaro_winkler (1.5.1)
@@ -206,6 +209,8 @@ DEPENDENCIES
   bootsnap (>= 1.1.0)
   factory_bot_rails
   faker
+  graphql
+  graphqr
   pg
   pry-rails
   puma (~> 3.11)
