@@ -7,11 +7,11 @@ module Core
     included do
       # User
       field :user, resolver: ::Core::Resolvers::UserResolver
-      field :users, resolver:  ::Core::Resolvers::UsersResolver
+      field :users, resolver: ::Core::Resolvers::UsersResolver
 
       # Comment
       field :comment, resolver: ::Core::Resolvers::CommentResolver
-      field :comments, resolver:  ::Core::Resolvers::CommentsResolver
+      field :comments, resolver: ::Core::Resolvers::CommentsResolver
     end
   end
 end
