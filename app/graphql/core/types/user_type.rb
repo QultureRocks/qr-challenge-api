@@ -15,7 +15,7 @@ module Core
       field :updated_at, Core::Types::TimeType, null: false
 
       # RELATIONS
-      field :comments, [Core::Types::CommnetType], null: false, description: 'The comments made by the user'
+      field :comments, [Core::Types::CommentType], null: false, description: 'The comments made by the user'
     end
   end
 end

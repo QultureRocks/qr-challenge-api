@@ -2,7 +2,8 @@
 
 module Types
   class QueryType < Types::BaseObject
-    extend GraphQR::QueryField
-    extend GraphQR::RelationFields
+    graphql_name 'Query'
+
+    include Core::CoreQueries
   end
 end
