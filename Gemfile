@@ -2,18 +2,18 @@
 
 source 'https://rubygems.org'
 
-ruby '2.5.3'
+ruby '2.7.7'
 
 gem 'active_model_serializers'
 gem 'apipie-rails'
-gem 'bootsnap', '>= 1.1.0', require: false
+gem 'bootsnap'
 gem 'faker'
 gem 'graphiql-rails'
 gem 'graphql'
 gem 'pg'
-gem 'puma', '~> 3.11'
+gem 'puma'
 gem 'rack-cors', require: 'rack/cors'
-gem 'rails', '~> 5.2.1'
+gem 'rails'
 
 group :development, :test do
   gem 'factory_bot_rails'
@@ -26,8 +26,7 @@ end
 
 group :development do
   gem 'annotate'
-  gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'spring', '~> 4.1' # https://stackoverflow.com/questions/70849954/undefined-method-mechanism-for-activesupportdependenciesmodule-nomethoder
 end
 
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]

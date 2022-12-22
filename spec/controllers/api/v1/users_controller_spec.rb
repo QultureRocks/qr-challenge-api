@@ -7,6 +7,10 @@ RSpec.describe Api::V1::UsersController, type: :controller do
   let(:users_response) { json[:users] }
   let(:user_response) { json[:user] }
 
+  before do
+    get :index, as: :json
+  end
+
   describe 'GET index' do
     let!(:users) { create_list(:user, 3) }
 
